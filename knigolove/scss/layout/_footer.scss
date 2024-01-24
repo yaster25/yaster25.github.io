@@ -1,0 +1,219 @@
+/*
+================================================================================
+|                                     FOOTER                                   |
+================================================================================
+*/
+
+.footer {
+	padding: toRem(50) 0 toRem(40);
+	border-top: toRem(1) solid $color-light-grey;
+	flex: none;
+	margin-top: auto;
+	.container {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__logo {
+		max-width: toRem(220);
+		display: inline-block;
+		display: block;
+		svg {
+			width: 100%;
+			height: auto;
+		}
+	}
+	&__slogan {
+		margin-top: toRem(-4);
+		margin-bottom: toRem(16);
+	}
+	&__bnts {
+		.btn {
+			margin-right: toRem(12);
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	&__title {
+		font-size: toRem(18);
+		font-weight: 600;
+		line-height: 1.3333;
+		margin-bottom: toRem(20);
+		color: $color-black;
+		svg {
+			display: none;
+		}
+	}
+	&-nav {
+		line-height: 2;
+		&-item {
+			&.d-hidden {
+				display: none;
+			}
+			&__link {
+				color: $color-deep-grey;
+				&:hover {
+					color: $color-red;
+				}
+			}
+		}
+	}
+	&__cards {
+		margin-top: auto;
+		margin-bottom: toRem(10);
+	}
+	&__card {
+		display: inline-block;
+		vertical-align: middle;
+		border-radius: toRem(6);
+		border: toRem(1) solid $color-light-blue-2;
+		width: toRem(56);
+		height: toRem(32);
+		text-align: center;
+		line-height: toRem(26);
+		margin-right: toRem(4);
+		&:last-child {
+			margin-right: 0;
+		}
+		svg {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+	&__copy {
+		color: $color-grey;
+		font-size: toRem(14);
+		font-weight: 400;
+		line-height: 1.85714;
+	}
+
+	&__col {
+		&-4 {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}
+
+.social {
+	&__item {
+		display: inline-block;
+		width: toRem(40);
+		height: toRem(40);
+		margin-right: toRem(6);
+		color: $color-white;
+		vertical-align: middle;
+		background-color: $color-deep-blue;
+		border-radius: 50%;
+		line-height: toRem(38);
+		text-align: center;
+		svg {
+			fill: currentColor;
+			display: inline-block;
+			width: toRem(24);
+			height: toRem(24);
+			vertical-align: middle;
+		}
+		&:hover {
+			background-color: $color-blue;
+			color: $color-white;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 79.9375rem) {
+	.footer {
+		.container {
+			flex-wrap: wrap;
+		}
+		&__col {
+			&-1 {
+				width: 100%;
+				padding-bottom: toRem(38);
+			}
+		}
+	}
+}
+//768-999
+@media screen and (max-width: 62.4375rem) {
+	.footer {
+		padding-bottom: toRem(86);
+		.container {
+			padding-left: toRem(30);
+			padding-right: toRem(30);
+		}
+	}
+}
+//480-767
+@media screen and (max-width: 47.9375rem) {
+	.footer {
+		padding-top: toRem(40);
+		padding-bottom: toRem(76);
+		.container {
+			padding-left: toRem(20);
+			padding-right: toRem(20);
+		}
+		&__bnts {
+			.btn {
+				margin-bottom: toRem(16);
+			}
+			margin-bottom: toRem(-16);
+		}
+
+		&__col {
+			width: 100%;
+			padding-bottom: toRem(26);
+			display: block;
+			&-4 {
+				padding-bottom: 0;
+			}
+		}
+		&__title {
+			position: relative;
+			&--toggle {
+				padding: toRem(10) 0;
+				margin: toRem(-10) 0 0;
+				border-bottom: toRem(1) solid $color-light-grey;
+			}
+			svg {
+				display: block;
+				position: absolute;
+				right: 0;
+				top: calc(50% - toRem(6));
+				stroke: $color-deep-grey;
+				transition: $default-transition;
+			}
+			&.active {
+				svg {
+					transform: rotate(-180deg);
+				}
+			}
+		}
+		&-nav {
+			display: none;
+			font-size: toRem(14);
+			line-height: toRem(26);
+			padding-top: toRem(10);
+			&-item.d-hidden {
+				display: block;
+			}
+		}
+		.social {
+			margin-bottom: toRem(20);
+		}
+		&__cards {
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: toRem(20);
+			margin-bottom: 0;
+		}
+		&__copy {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+}

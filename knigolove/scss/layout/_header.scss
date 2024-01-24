@@ -1,0 +1,405 @@
+@use "sass:math";
+
+.header {
+	position: fixed;
+	z-index: 8;
+	background-color: $color-white;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: toRem(116);
+	&-top {
+		border-bottom: toRem(1) solid $color-light-grey-2;
+		padding: toRem(8) 0;
+		.container {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		&__left {
+			display: flex;
+			align-items: center;
+			flex: none;
+			margin-right: toRem(60);
+		}
+		&__right {
+			display: flex;
+			align-items: center;
+			flex: none;
+			margin-left: toRem(60);
+		}
+		&__center {
+			width: 100%;
+		}
+	}
+	&-nav {
+		border-bottom: toRem(1) solid $color-light-grey-2;
+		padding: toRem(10) 0;
+	}
+
+	&-action {
+		padding: 0 toRem(24);
+		position: relative;
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			width: toRem(1);
+			height: toRem(12);
+			top: calc(50% - toRem(6));
+			background: #d6d7d9;
+		}
+		&:first-child {
+			padding-left: 0;
+			&:before {
+				display: none;
+			}
+		}
+		&:last-child {
+			padding-right: 0;
+		}
+		&__link {
+			color: $color-deep-grey;
+			width: toRem(26);
+			height: toRem(26);
+			display: block;
+			position: relative;
+			&:hover {
+				color: $color-red;
+			}
+			svg {
+				stroke: currentColor;
+			}
+			&-num {
+				position: absolute;
+				height: toRem(14);
+				padding: 0 toRem(2) 0 toRem(3);
+				min-width: toRem(14);
+				background-color: $color-red;
+				line-height: toRem(14);
+				text-align: center;
+				color: $color-white;
+				top: calc(50% - toRem(7));
+				font-size: toRem(10);
+				border-radius: toRem(20);
+				right: 0;
+				transform: translateX(50%);
+			}
+		}
+	}
+}
+
+.logo {
+	max-width: toRem(250);
+	svg {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+}
+.lang {
+	margin-left: 1.88rem;
+	position: relative;
+	line-height: 1.75;
+	z-index: 2;
+	&__title {
+		color: $color-deep-grey;
+		cursor: pointer;
+		transition: $default-transition;
+		&:hover {
+			color: $color-red;
+		}
+		svg {
+			stroke: $color-grey;
+			width: toRem(13);
+			height: toRem(13);
+			display: inline-block;
+			vertical-align: middle;
+			margin: toRem(-2) 0 0 toRem(5);
+		}
+	}
+	&__content {
+		display: none;
+		position: absolute;
+		border-radius: toRem(10);
+		border: 1px solid $color-light-grey-2;
+		background: $color-white;
+		top: toRem(-9);
+		padding: toRem(6) toRem(12);
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	&__link {
+		display: block;
+
+		padding: toRem(2) 0;
+		border-bottom: toRem(1) solid #f1f1f1;
+		color: $color-deep-grey;
+		&:last-child {
+			border-bottom: none;
+		}
+		&.active {
+			color: $color-red;
+		}
+		&:hover {
+			color: $color-red;
+		}
+	}
+}
+.search {
+	border-radius: toRem(30);
+	border: 1px solid $color-light-grey;
+	position: relative;
+	padding-right: toRem(46);
+	height: toRem(42);
+	&__input {
+		width: 100%;
+		height: 100%;
+		display: block;
+		padding-left: toRem(24);
+		background-color: transparent;
+		border: none;
+		font-weight: 300;
+		color: $color-deep-grey;
+		@include placeholder-color($color-grey);
+	}
+	&__btn {
+		position: absolute;
+		right: toRem(4);
+		top: calc(50% - toRem(17));
+		width: toRem(34);
+		height: toRem(34);
+		border-radius: toRem(20);
+		background-color: $color-light-red;
+		color: $color-white;
+		border: none;
+		text-align: center;
+		padding: toRem(3) toRem(1) 0 toRem(2);
+		transition: $default-transition;
+		&:hover {
+			background-color: $color-red;
+		}
+		svg {
+			width: toRem(17);
+			height: toRem(17);
+			fill: currentColor;
+		}
+	}
+}
+
+.nav {
+	color: $color-black;
+	line-height: 1.75;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 toRem(-20);
+	&-item {
+		padding: 0 toRem(20);
+	}
+	&-link {
+		color: inherit;
+		&:hover {
+			color: $color-red;
+		}
+		&.active {
+			color: $color-red;
+		}
+	}
+}
+
+.menu-trigger {
+	display: none;
+	vertical-align: middle;
+	width: toRem(28);
+	height: toRem(28);
+	margin-left: auto;
+	position: relative;
+	span {
+		position: absolute;
+		background-color: $color-deep-grey;
+		width: toRem(20);
+		height: toRem(2);
+		border-radius: toRem(2);
+		transition: $default-transition;
+		left: toRem(4);
+		&:first-child {
+			top: toRem(8);
+		}
+		&:nth-child(2) {
+			top: toRem(13);
+		}
+		&:nth-child(3) {
+			top: toRem(18);
+			width: toRem(10);
+		}
+	}
+	&:hover {
+		span {
+			background-color: $color-red;
+			&:nth-child(3) {
+				width: toRem(20);
+			}
+		}
+	}
+}
+
+.aside {
+	display: none;
+	position: fixed;
+	top: 0px;
+	right: -100%;
+	width: toRem(315);
+	background-color: $color-white;
+	transition: $default-transition;
+	height: 100%;
+	overflow: auto;
+	z-index: 10;
+	&.active {
+		right: 0;
+	}
+	&-top {
+		position: relative;
+		padding: toRem(20) toRem(20) toRem(8) toRem(20);
+		background-color: $color-light-grey-2;
+		margin-bottom: toRem(23);
+		&__link {
+			font-size: toRem(14);
+			line-height: toRem(26);
+			display: inline-block;
+			vertical-align: middle;
+			color: $color-light-blue;
+		}
+		span {
+			background-color: $color-light-grey;
+			width: toRem(1);
+			height: toRem(12);
+			display: inline-block;
+			vertical-align: middle;
+			margin: toRem(0) toRem(6);
+		}
+	}
+	.menu-trigger {
+		position: absolute;
+		right: toRem(12);
+		top: toRem(20);
+		color: $color-deep-grey;
+		svg {
+			stroke: currentColor;
+			width: toRem(21);
+			height: toRem(20);
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+		}
+		&:hover {
+			color: $color-red;
+		}
+	}
+
+	.nav {
+		padding-bottom: toRem(12);
+		margin: 0 0 toRem(12);
+		border-bottom: toRem(1) solid $color-deep-grey;
+		text-align: left;
+
+		display: block;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		&-item {
+			padding: 0;
+		}
+		&-link {
+			display: block;
+			padding: toRem(10) toRem(20);
+			font-size: toRem(16);
+			line-height: toRem(28);
+			&:hover {
+				background-color: $color-light-red-2;
+				color: $color-red;
+			}
+			&.active {
+				color: $color-red;
+			}
+		}
+		&--small {
+			.nav-link {
+				font-size: toRem(14);
+				padding: toRem(4) toRem(20);
+			}
+		}
+	}
+}
+
+//768-999
+@media screen and (max-width: 62.4375rem) {
+	.header {
+		height: toRem(122);
+		border-bottom: toRem(1) solid $color-white;
+		transition: $default-transition;
+		&-fixed {
+			border-color: $color-light-grey;
+		}
+		.container {
+			padding-left: toRem(20);
+			padding-right: toRem(20);
+		}
+	}
+	.logo {
+		max-width: toRem(180);
+	}
+	.lang {
+		margin-left: toRem(24);
+	}
+	.header-nav {
+		display: none;
+	}
+	.menu-trigger {
+		display: block;
+	}
+	.header-top {
+		padding: 0;
+		border: none;
+		.container {
+			flex-wrap: wrap;
+		}
+		&__left {
+			width: 100%;
+			border-bottom: toRem(1) solid $color-light-grey-2;
+			padding: toRem(10) 0;
+		}
+		&__center {
+			width: 100%;
+			padding: toRem(12) 0 toRem(9);
+		}
+		&__right {
+			position: fixed;
+			z-index: 8;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			background-color: $color-white;
+			padding: toRem(10) toRem(20);
+			border-top: toRem(1) solid $color-light-grey;
+			margin: 0;
+			justify-content: center;
+		}
+	}
+	.aside {
+		display: block;
+	}
+
+	.menu-open,
+	.filter-open {
+		overflow: hidden;
+		.main-wrapper__before {
+			background-color: rgba(#000, 0.85);
+			//display: block;
+		}
+	}
+}

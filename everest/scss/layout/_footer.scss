@@ -1,0 +1,218 @@
+
+/*
+================================================================================
+|                                     FOOTER                                   |
+================================================================================
+*/
+
+.footer{    
+    padding: 45px 0 45px;
+    position: relative; 
+    background: $color-white;
+    .wrapper{
+        max-width: 1744px;
+    }
+    &__left{
+        @include flexbox;
+        @include align-items(center);
+    }
+    &__right{
+        @include flexbox;
+        @include justify-content(space-between);
+        padding-left: 7% !important;
+        padding-top: 10px !important;
+    }
+    &__logo{
+        width: 185px;
+        height: 50px;
+        display: block;
+        margin-right: 40px;
+        img{
+            display:block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    &-contacts{
+        font-size: 15px;
+        line-height: 18px;
+        color: $color-grey;
+        &:nth-child(2){
+            text-align: right;
+        }
+        li{
+            margin-bottom:10px;
+            a{
+                color:inherit;
+                &:hover{
+                    color: $color-dark;
+                }
+                &.footer-contacts__phone{
+                    color: $color-blue;
+                    font-weight: bold;
+                    font-size: 18px;
+                    line-height: 21px;
+                    &:hover{
+                        color: $color-dark;
+                    }
+                }
+            }
+            a.contacts-download{
+                color: $color-blue;
+                margin: 0;
+                font-weight: 700;
+                margin-top: -2px;
+                &:hover{
+                    color: $color-dark;
+                }
+            }
+        }
+    }
+    
+    &__text{
+        width: calc(100% - 225px);
+        line-height: 22px !important;
+        font-size: 16px !important;
+    }
+    
+    &__copy{
+        font-size: 13px;
+        line-height: 15px;
+        color: $color-dark;
+        margin-right: 20px;
+    }
+    &__link{
+        color: $color-blue;
+        font-size: 13px;
+        line-height: 15px;
+        &:hover{
+            color: $color-dark;
+        }
+    }
+    
+    &__develop{
+        margin-left: auto;
+    }
+    
+
+}
+
+
+@media screen and (max-width: 1620px) {
+    .footer__right{
+        padding-left: 15px !important;
+    }
+}
+@media screen and (max-width: 1439px) {
+    .footer .y-col{
+        width: 50%;
+    }
+    .footer__left{
+        @include flex-wrap(wrap);
+    }
+    .footer__text{
+        //width: 100%;
+        //padding-top: 20px;
+            font-size: 15px !important;
+    }
+    .footer__logo{
+        margin-right: 30px;
+    }
+    
+}
+
+@media screen and (max-width: 1199px) {
+    .footer .y-col {
+        width: 100%;
+    }
+    .footer .y-row{
+        @include justify-content(space-between);
+    }
+    .footer{
+        .footer__left-2{
+            width: auto;
+        }
+        .footer__right-2{
+            width: auto;
+        }
+        
+    }
+    .footer__logo{
+        width: 135px;
+        height: 36px;
+    }
+    .footer__text {
+        width: calc(100% - 165px);
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .footer__text {
+        font-size: 12px !important;
+        line-height: 18px !important;
+    }
+    .footer-contacts li a.footer-contacts__phone{
+        font-size: 16px;
+        line-height: 19px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .footer__right{
+        @include flex-wrap(wrap);
+    }
+    .footer-contacts{
+        margin-bottom: 15px;
+        font-size: 14px;
+        line-height: 16px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    .footer-contacts:nth-child(n){
+        width: 100%;
+        text-align: left;
+    }
+    .footer__text{
+        width: 100%;
+        padding-top: 15px;
+    }
+    .footer{
+        padding-top: 30px;
+    }
+    .footer-contacts li{
+        margin-bottom: 25px;
+    }
+    .footer .footer__left-2{
+        @include flex-direction(column-reverse);
+    }
+    .footer__copy{
+        font-size: 10px;
+        line-height: 12px;
+        margin-top: 12px;
+    }
+    .footer__link{
+        font-size: 10px;
+        line-height: 12px;
+        margin-top: -25px;
+        @include align-items(flex-start);
+    }
+    .footer .footer__right-2{
+        margin-top: -5px;
+    }
+}
+
+
+@media screen and (max-width: 639px) {
+    
+}
+
+@media screen and (max-width: 479px) {
+   
+    
+}
+
+@media screen and (max-width: 374px) {
+    
+}

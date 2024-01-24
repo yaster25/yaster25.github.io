@@ -1,0 +1,459 @@
+
+/*
+================================================================================
+|                                     HEADER                                   |
+================================================================================
+*/
+
+
+.header{
+    z-index: 9; 
+    background: $color-white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    .wrapper{
+        max-width: 1750px;
+        position: relative;
+    }
+    &__wrapper{
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(space-between);   
+        height: 100px;
+        padding-top: 8px !important;
+    }
+    &__left{
+        @include flexbox;
+        @include align-items(center);
+        
+    }
+    &__right{
+        @include flexbox;
+        @include align-items(center);
+        
+    }
+    &__mail{
+        font-size: 16px;
+        line-height: 19px;
+        color: $color-grey;
+        margin-right: 20px;
+        &:hover{
+            color: $color-blue;
+        }
+    }
+    &__phone{
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        background: $color-blue;
+        color: $color-white;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 0 20px;
+        svg{
+            display:inline-block;
+            vertical-align: middle;
+            margin: -2px 13px 0 0;
+            fill:currentColor;
+        }
+        &:hover{
+            background: $color-blue-light;
+        }
+    }
+  
+}
+.logo{    
+    display: block;
+    width: 185px;
+    height: 50px;
+    margin-right: 90px;
+    img{
+        max-width: 100%;
+        height: auto;
+    }    
+}
+
+.nav{   
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    text-transform: uppercase;
+    @include flexbox;
+    
+    &-item{
+        margin-right: 40px;
+        &:last-child{
+            margin-right: 0;
+        }
+        &__link{            
+            color: $color-dark;
+            white-space: nowrap;
+            position: relative;
+            border-bottom: 2px solid transparent;
+            &:hover{
+                color: $color-blue;
+                border-color: $color-blue;
+            } 
+            svg{
+                display:none;
+            }
+            &.active{
+                color: $color-blue;
+            }
+        }
+        
+        &:hover{
+            .nav-item__link{
+                color: $color-blue;
+                border-color: $color-blue;
+            }
+            .subnav-wrapper{
+                display: block;
+            }
+        }
+    }   
+}
+
+.subnav-wrapper{
+    display: none;
+    position: absolute;
+    padding-top: 25px;
+    
+    z-index: 2;
+    left: 0;
+    width: 1730px;
+}
+
+.subnav{
+    @include flexbox;
+    background: #fff;
+    padding: 15px 50px 50px 285px;
+    &-item{
+        margin-right: 17px;
+        position: relative;
+        
+        &:last-child{
+            margin-right: 0;
+        }
+        &-link{
+            position: relative;
+            @include flexbox;
+            @include align-items(flex-end);
+            padding: 14px 10px;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 22px;
+            color: $color-white;
+            font-family: $custom-font-family;
+            width: 200px;
+            height: 270px;
+            text-transform: none;
+            overflow: hidden;
+            
+            &__name{
+                position: relative;
+                z-index: 2;
+            }
+            &__image{
+                background: no-repeat center center;
+                background-size: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1;
+                transition: $default-transition;
+                &_m{
+                    display: none;
+                }
+                &:after{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(180deg, rgba(48, 49, 69, 0.65) 0%, rgba(8, 40, 87, 0.63) 100%);
+                }
+            }
+            
+            &:hover{
+                .subnav-item-link__image{
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+    
+    &__back{
+       position: absolute;
+        top: 0;
+        left: 0px;
+        background: $color-blue;
+        color: $color-white;
+        width: 45px;
+        height: 40px;
+        text-align: center;
+        display: none;
+        @include align-items(center);
+        @include justify-content(center);
+        z-index: 9;
+        svg{
+            fill:currentColor;
+        }
+        &.active{
+            @include flexbox;
+        }
+    }
+}
+
+.menu-trigger{
+    display: none;
+    font-size: 12px;
+    color: $color-white;
+    height: 40px;
+    line-height: 40px;
+    background: $color-blue;
+    padding: 0 17px 0 44px;
+    position: relative;
+    svg{
+        fill:currentColor;
+        position: absolute;
+        width: 20px;
+        height: 12px;
+        top: calc(50% - 6px);
+        left: 15px;
+    }
+}
+
+.sidebar{
+    position:fixed;top:80px;bottom:0;z-index:8;overflow:auto;
+    left: 100%;
+    transition: $default-transition;
+    width: 320px;
+    padding-left: 15px;
+    &.active{overflow-y:auto; display: block; left: calc(100% - 320px);}
+     &__phone{
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        color: $color-white;
+        margin-bottom: 30px;
+         display: inline-block;
+    }
+    &__mail{
+        font-size: 15px;
+        line-height: 18px;
+        color:$color-blue-light;
+    }
+}
+.sidebar-inner{
+    background: $color-blue;top:0;width:100%;bottom:0;max-width:100%;min-height:100%;position:relative;    overflow: hidden;
+    padding: 60px 30px 50px;
+    @include flexbox;
+    @include flex-direction(column);
+    @include justify-content(space-between);
+    .nav{
+        width: 100%;
+        white-space: normal;
+        text-align: left;
+        display: block;
+        margin: 0 auto 20px;
+        &-item{
+            width:100%;
+            margin: 0 0 43px 0;
+            &__link{
+                font-weight: 500;
+                font-size: 13px;
+                line-height: 15px;
+                color: $color-white;
+                svg{
+                    display:inline-block;
+                    vertical-align: middle;
+                    margin: -2px 0 0 8px;
+                    fill:currentColor;
+                }
+                &:hover{
+                     color: $color-white;
+                }
+                &.active{
+                    color: $color-blue-light;
+                }
+            }
+            &_parent{
+                .nav-item__link{
+                    
+                }
+            }
+            &:hover{
+                .nav-item__link{
+                    color: $color-white;
+                }
+            }
+        }
+    }
+    .header-lang{
+        @include flexbox;
+        a{
+            margin-left: 10px;
+        }
+        &__title{
+            color: $color-green;
+        }
+    }
+    
+    .subnav-wrapper{
+        width: 305px;
+        background: $color-white;
+        top: 0;
+        bottom: 0;
+        overflow: auto;
+        padding: 0;
+        display: none !important;
+        &.active{
+            display: block!important;
+        }
+    }
+   .subnav {
+        flex-direction: column;
+        padding-top: 0;
+        padding: 0 0 0 30px;
+    }
+    .subnav-item {
+        margin-right: 0;
+        border-bottom: 1px solid $color-blue-light;
+    }
+    .subnav-item-link {
+        width: 100%;
+        height: 120px;
+        background-size: cover;
+        font-size: 16px;
+        line-height: 19px;
+    }
+    
+   
+}
+.menu-open{
+    overflow: hidden;
+}
+.menu-open .main-wrapper:before{
+    background: linear-gradient(0deg, rgba(29, 57, 96, 0.5), rgba(29, 57, 96, 0.5));
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 8;
+    content: "";
+}
+
+
+
+
+@media screen and (max-width: 1439px) {
+    .logo{
+        margin-right: 30px;
+    }
+    .nav-item {
+        margin-right: 30px;
+    }
+    .header__right{
+        @include flex-wrap(wrap);
+        @include justify-content(flex-end);
+    }
+    .header__mail {
+        margin-right: 0;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+    
+    .header__wrapper{
+        padding-top: 0 !important;
+    }
+    
+    
+
+    .subnav-item-link{
+        width: 174px;
+        height: 230px;
+    }
+    .subnav{
+        padding-left: 230px;
+        padding-bottom: 30px;
+        padding-right: 30px;
+    }
+
+     .header__phone{
+        margin-left: 20px;
+    }
+    .header__right{
+        padding-left: 10px;
+    }
+}
+@media screen and (max-width: 1199px) {
+   .logo {
+        height: 36px;
+        width: 135px;
+    }
+    .nav{
+        font-size: 14px;
+    }
+    .header__phone {
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+        padding: 0 10px;
+        margin-left: 20px;
+    }
+    .header__mail{
+        font-size: 14px;
+    }
+    .subnav {
+        padding-right: 15px;
+        padding-left: 15px;
+        justify-content: center;
+    }
+    .subnav-item-link{
+        width: 175px;
+    }
+    .subnav-wrapper{
+        width: 100vw;
+    }
+    
+}
+
+
+@media screen and (max-width: 991px) {
+    .menu-trigger{
+        display: block;
+    }
+    .header__wrapper{
+        height: 80px;
+            padding-top: 10px !important;
+    }
+    .header{
+        height: 80px;
+        .nav{
+            display: none;
+        }
+        .header__mail{
+            display: none;
+        }
+        .header__phone{
+            display: none;
+        }
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+   
+}
+
+@media screen and (max-width:639px) {
+  
+}

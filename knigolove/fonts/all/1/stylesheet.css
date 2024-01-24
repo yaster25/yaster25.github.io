@@ -1,0 +1,180 @@
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: local('Montserrat Alternates ExtraBold Italic'), local('MontserratAlternates-ExtraBoldItalic'),
+        url('MontserratAlternates-ExtraBoldItalic.woff2') format('woff2'),
+        url('MontserratAlternates-ExtraBoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: local('Montserrat Alternates SemiBold'), local('MontserratAlternates-SemiBold'),
+        url('MontserratAlternates-SemiBold.woff2') format('woff2'),
+        url('MontserratAlternates-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: local('Montserrat Alternates Medium Italic'), local('MontserratAlternates-MediumItalic'),
+        url('MontserratAlternates-MediumItalic.woff2') format('woff2'),
+        url('MontserratAlternates-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates ExLight';
+    src: local('Montserrat Alternates ExtraLight Italic'), local('MontserratAlternates-ExtraLightItalic'),
+        url('MontserratAlternates-ExtraLightItalic.woff2') format('woff2'),
+        url('MontserratAlternates-ExtraLightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: local('Montserrat Alternates Light Italic'), local('MontserratAlternates-LightItalic'),
+        url('MontserratAlternates-LightItalic.woff2') format('woff2'),
+        url('MontserratAlternates-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: local('Montserrat Alternates Regular'), local('MontserratAlternates-Regular'),
+        url('MontserratAlternates-Regular.woff2') format('woff2'),
+        url('MontserratAlternates-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: local('Montserrat Alternates Italic'), local('MontserratAlternates-Italic'),
+        url('MontserratAlternates-Italic.woff2') format('woff2'),
+        url('MontserratAlternates-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates ExLight';
+    src: local('Montserrat Alternates ExtraLight'), local('MontserratAlternates-ExtraLight'),
+        url('MontserratAlternates-ExtraLight.woff2') format('woff2'),
+        url('MontserratAlternates-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: local('Montserrat Alternates Light'), local('MontserratAlternates-Light'),
+        url('MontserratAlternates-Light.woff2') format('woff2'),
+        url('MontserratAlternates-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: local('Montserrat Alternates Medium'), local('MontserratAlternates-Medium'),
+        url('MontserratAlternates-Medium.woff2') format('woff2'),
+        url('MontserratAlternates-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: local('Montserrat Alternates Bold Italic'), local('MontserratAlternates-BoldItalic'),
+        url('MontserratAlternates-BoldItalic.woff2') format('woff2'),
+        url('MontserratAlternates-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: local('Montserrat Alternates Black'), local('MontserratAlternates-Black'),
+        url('MontserratAlternates-Black.woff2') format('woff2'),
+        url('MontserratAlternates-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: local('Montserrat Alternates SemiBold Italic'), local('MontserratAlternates-SemiBoldItalic'),
+        url('MontserratAlternates-SemiBoldItalic.woff2') format('woff2'),
+        url('MontserratAlternates-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: local('Montserrat Alternates Bold'), local('MontserratAlternates-Bold'),
+        url('MontserratAlternates-Bold.woff2') format('woff2'),
+        url('MontserratAlternates-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: local('Montserrat Alternates Black Italic'), local('MontserratAlternates-BlackItalic'),
+        url('MontserratAlternates-BlackItalic.woff2') format('woff2'),
+        url('MontserratAlternates-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: local('Montserrat Alternates ExtraBold'), local('MontserratAlternates-ExtraBold'),
+        url('MontserratAlternates-ExtraBold.woff2') format('woff2'),
+        url('MontserratAlternates-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: local('Montserrat Alternates Thin'), local('MontserratAlternates-Thin'),
+        url('MontserratAlternates-Thin.woff2') format('woff2'),
+        url('MontserratAlternates-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: local('Montserrat Alternates Thin Italic'), local('MontserratAlternates-ThinItalic'),
+        url('MontserratAlternates-ThinItalic.woff2') format('woff2'),
+        url('MontserratAlternates-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
